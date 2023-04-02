@@ -1,0 +1,52 @@
+1.
+
+dbda@dbda-VirtualBox:~/DBDA$ touch songs{1..6}.mp3
+dbda@dbda-VirtualBox:~/DBDA$ touch film{1..6}.avi
+dbda@dbda-VirtualBox:~/DBDA$ touch snap{1..6}.jpg
+dbda@dbda-VirtualBox:~/DBDA$ ls
+film1.avi  film3.avi  film5.avi  snap1.jpg  snap3.jpg  snap5.jpg  songs1.mp3  songs3.mp3  songs5.mp3
+film2.avi  film4.avi  film6.avi  snap2.jpg  snap4.jpg  snap6.jpg  songs2.mp3  songs4.mp3  songs6.mp3
+
+2.
+
+dbda@dbda-VirtualBox:~/DBDA$ mkdir Music Videos Pictures
+dbda@dbda-VirtualBox:~/DBDA$ ls
+film1.avi  film4.avi  Music      snap2.jpg  snap5.jpg   songs2.mp3  songs5.mp3
+film2.avi  film5.avi  Pictures   snap3.jpg  snap6.jpg   songs3.mp3  songs6.mp3
+film3.avi  film6.avi  snap1.jpg  snap4.jpg  songs1.mp3  songs4.mp3  Videos
+dbda@dbda-VirtualBox:~/DBDA$ mv songs{1..6}.mp3 Music
+dbda@dbda-VirtualBox:~/DBDA$ mv snap{1..6}.jpg Pictures
+dbda@dbda-VirtualBox:~/DBDA$ mv film{1..6}.avi Videos
+dbda@dbda-VirtualBox:~/DBDA$ ls Music/
+songs1.mp3  songs2.mp3  songs3.mp3  songs4.mp3  songs5.mp3  songs6.mp3
+dbda@dbda-VirtualBox:~/DBDA$ ls Pictures/
+snap1.jpg  snap2.jpg  snap3.jpg  snap4.jpg  snap5.jpg  snap6.jpg
+dbda@dbda-VirtualBox:~/DBDA$ ls Videos/
+film1.avi  film2.avi  film3.avi  film4.avi  film5.avi  film6.avi
+
+3.
+
+dbda@dbda-VirtualBox:~/DBDA$ mkdir Friends Family Work
+dbda@dbda-VirtualBox:~/DBDA$ ls
+Family  Friends  Music  Pictures  Videos  Work
+
+4.
+
+dbda@dbda-VirtualBox:~/DBDA$ cp Music/songs{1..2}.mp3 Friends
+dbda@dbda-VirtualBox:~/DBDA$ cp Pictures/snap{1..2}.jpg Friends
+dbda@dbda-VirtualBox:~/DBDA$ cp Videos/film{1..2}.avi Friends
+dbda@dbda-VirtualBox:~/DBDA$ ls Friends/
+film1.avi  film2.avi  snap1.jpg  snap2.jpg  songs1.mp3  songs2.mp3
+dbda@dbda-VirtualBox:~/DBDA$ cp Pictures/snap{3,4}.jpg Family
+dbda@dbda-VirtualBox:~/DBDA$ cp Music/songs{3,4}.mp3 Family
+dbda@dbda-VirtualBox:~/DBDA$ cp Videos/film{3,4}.avi Family
+dbda@dbda-VirtualBox:~/DBDA$ ls Family/
+film3.avi  film4.avi  snap3.jpg  snap4.jpg  songs3.mp3  songs4.mp3
+dbda@dbda-VirtualBox:~/DBDA$ cp Music/songs{5,6}.mp3 Work
+dbda@dbda-VirtualBox:~/DBDA$ cp Videos/film{5,6}.avi Work
+dbda@dbda-VirtualBox:~/DBDA$ cp Pictures/snap{5,6}.jpg Work
+dbda@dbda-VirtualBox:~/DBDA$ ls Work/
+film5.avi  film6.avi  snap5.jpg  snap6.jpg  songs5.mp3  songs6.mp3
+dbda@dbda-VirtualBox:~/DBDA$ ls
+Family  Friends  Music  Pictures  Videos  Work
+dbda@dbda-VirtualBox:~/DBDA$

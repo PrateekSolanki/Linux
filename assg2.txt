@@ -1,0 +1,524 @@
+6.
+
+dbda@dbda-VirtualBox:~/DBDA$ cd Family/
+dbda@dbda-VirtualBox:~/DBDA/Family$ ls
+film3.avi  film4.avi  snap3.jpg  snap4.jpg  songs3.mp3  songs4.mp3
+dbda@dbda-VirtualBox:~/DBDA/Family$ rm *
+dbda@dbda-VirtualBox:~/DBDA/Family$ ls
+dbda@dbda-VirtualBox:~/DBDA/Family$ cd ..
+dbda@dbda-VirtualBox:~/DBDA$ ls
+Family  Friends  Music  Pictures  Videos  Work
+
+7.
+
+dbda@dbda-VirtualBox:~/DBDA$ rm -r Friends/
+dbda@dbda-VirtualBox:~/DBDA$ ls
+Family  Music  Pictures  Videos  Work
+dbda@dbda-VirtualBox:~/DBDA$
+
+8.
+
+dbda@dbda-VirtualBox:~/DBDA$ sudo useradd -m tom
+dbda@dbda-VirtualBox:~/DBDA$ sudo useradd -m bob
+dbda@dbda-VirtualBox:~/DBDA$ sudo useradd -m sam
+dbda@dbda-VirtualBox:~/DBDA$ sudo useradd -m prince
+dbda@dbda-VirtualBox:~/DBDA$ sudo passwd tom
+New password: 
+BAD PASSWORD: The password is a palindrome
+Retype new password: 
+passwd: password updated successfully
+dbda@dbda-VirtualBox:~/DBDA$ sudo passwd bob
+New password: 
+BAD PASSWORD: The password is a palindrome
+Retype new password: 
+passwd: password updated successfully
+dbda@dbda-VirtualBox:~/DBDA$ sudo passwd sam
+New password: 
+BAD PASSWORD: The password is a palindrome
+Retype new password: 
+passwd: password updated successfully
+dbda@dbda-VirtualBox:~/DBDA$ sudo passwd prince
+New password: 
+BAD PASSWORD: The password is a palindrome
+Retype new password: 
+passwd: password updated successfully
+dbda@dbda-VirtualBox:~/DBDA$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,dbda
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:dbda
+floppy:x:25:
+tape:x:26:
+sudo:x:27:dbda
+audio:x:29:pulse
+dip:x:30:dbda
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:telnetd
+video:x:44:
+sasl:x:45:
+plugdev:x:46:dbda
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+crontab:x:104:
+messagebus:x:105:
+systemd-timesync:x:106:
+input:x:107:
+sgx:x:108:
+kvm:x:109:
+render:x:110:
+syslog:x:111:
+tss:x:112:
+bluetooth:x:113:
+ssl-cert:x:114:
+uuidd:x:115:
+systemd-oom:x:116:
+tcpdump:x:117:
+_ssh:x:118:
+avahi-autoipd:x:119:
+netdev:x:120:
+avahi:x:121:
+lpadmin:x:122:dbda
+rtkit:x:123:
+whoopsie:x:124:
+sssd:x:125:
+fwupd-refresh:x:126:
+nm-openvpn:x:127:
+scanner:x:128:saned
+saned:x:129:
+colord:x:130:
+geoclue:x:131:
+pulse:x:132:
+pulse-access:x:133:
+gdm:x:134:
+lxd:x:135:dbda
+dbda:x:1000:CDAC
+sambashare:x:136:dbda
+CDAC:x:1021:CDAC,IACSD,SUNBEAM,ACTSPUNE,KCDAC,JCDAC,TCDAC
+telnetd:x:137:
+plocate:x:138:
+tom:x:1008:
+bob:x:1009:
+sam:x:1010:
+prince:x:1011:
+dbda@dbda-VirtualBox:~/DBDA$
+
+9.
+
+dbda@dbda-VirtualBox:~/DBDA$ sudo groupadd dac
+dbda@dbda-VirtualBox:~/DBDA$ sudo groupadd ditiss
+dbda@dbda-VirtualBox:~/DBDA$ sudo groupadd dbda
+groupadd: group 'dbda' already exists
+dbda@dbda-VirtualBox:~/DBDA$ tail -n 12 /etc/group
+lxd:x:135:dbda
+dbda:x:1000:CDAC
+sambashare:x:136:dbda
+CDAC:x:1021:CDAC,IACSD,SUNBEAM,ACTSPUNE,KCDAC,JCDAC,TCDAC
+telnetd:x:137:
+plocate:x:138:
+tom:x:1008:
+bob:x:1009:
+sam:x:1010:
+prince:x:1011:
+dac:x:1022:
+ditiss:x:1023:
+dbda@dbda-VirtualBox:~/DBDA$
+
+10.
+
+dbda@dbda-VirtualBox:~/DBDA$ tail -n 12 /etc/group
+lxd:x:135:dbda
+dbda:x:1000:CDAC
+sambashare:x:136:dbda
+CDAC:x:1021:CDAC,IACSD,SUNBEAM,ACTSPUNE,KCDAC,JCDAC,TCDAC
+telnetd:x:137:
+plocate:x:138:
+tom:x:1008:
+bob:x:1009:
+sam:x:1010:
+prince:x:1011:
+dac:x:1022:
+ditiss:x:1023:
+dbda@dbda-VirtualBox:~/DBDA$ sudo usermod -a -G dac tom
+dbda@dbda-VirtualBox:~/DBDA$ sudo usermod -a -G dbda bob
+dbda@dbda-VirtualBox:~/DBDA$ sudo usermod -a -G ditiss sam
+dbda@dbda-VirtualBox:~/DBDA$ tail -n 12 /etc/group
+lxd:x:135:dbda
+dbda:x:1000:CDAC,bob
+sambashare:x:136:dbda
+CDAC:x:1021:CDAC,IACSD,SUNBEAM,ACTSPUNE,KCDAC,JCDAC,TCDAC
+telnetd:x:137:
+plocate:x:138:
+tom:x:1008:
+bob:x:1009:
+sam:x:1010:
+prince:x:1011:
+dac:x:1022:tom
+ditiss:x:1023:sam
+dbda@dbda-VirtualBox:~/DBDA$
+
+11.
+
+dbda@dbda-VirtualBox:~/DBDA$ sudo su prince
+$ whoami
+prince
+$ pwd
+/home/dbda/DBDA
+$ cd /tmp
+$ pwd
+/tmp
+$ mkdir IACSD
+$ ls
+IACSD
+snap-private-tmp
+systemd-private-694f49e53f22468f859be0691d9cdfbe-colord.service-dxfxru
+systemd-private-694f49e53f22468f859be0691d9cdfbe-ModemManager.service-cea7Nb
+systemd-private-694f49e53f22468f859be0691d9cdfbe-power-profiles-daemon.service-3VNFSi
+systemd-private-694f49e53f22468f859be0691d9cdfbe-switcheroo-control.service-F17QnA
+systemd-private-694f49e53f22468f859be0691d9cdfbe-systemd-logind.service-bAO0eg
+systemd-private-694f49e53f22468f859be0691d9cdfbe-systemd-oomd.service-Heo6sD
+systemd-private-694f49e53f22468f859be0691d9cdfbe-systemd-resolved.service-kK2cQi
+systemd-private-694f49e53f22468f859be0691d9cdfbe-systemd-timesyncd.service-sFW1Kh
+systemd-private-694f49e53f22468f859be0691d9cdfbe-upower.service-c0Jayu
+tracker-extract-3-files.1000
+tracker-extract-3-files.128
+$ ls -l
+total 52
+drwxrwxr-x 2 prince prince 4096 Mar 26 15:18 IACSD
+drwx------ 4 root   root   4096 Mar 26 10:13 snap-private-tmp
+drwx------ 3 root   root   4096 Mar 26 10:06 systemd-private-694f49e53f22468f859be0691d9cdfbe-colord.service-dxfxru
+drwx------ 3 root   root   4096 Mar 26 10:06 systemd-private-694f49e53f22468f859be0691d9cdfbe-ModemManager.service-cea7Nb
+drwx------ 3 root   root   4096 Mar 26 10:06 systemd-private-694f49e53f22468f859be0691d9cdfbe-power-profiles-daemon.service-3VNFSi
+drwx------ 3 root   root   4096 Mar 26 10:06 systemd-private-694f49e53f22468f859be0691d9cdfbe-switcheroo-control.service-F17QnA
+drwx------ 3 root   root   4096 Mar 26 10:06 systemd-private-694f49e53f22468f859be0691d9cdfbe-systemd-logind.service-bAO0eg
+drwx------ 3 root   root   4096 Mar 26 10:06 systemd-private-694f49e53f22468f859be0691d9cdfbe-systemd-oomd.service-Heo6sD
+drwx------ 3 root   root   4096 Mar 26 10:06 systemd-private-694f49e53f22468f859be0691d9cdfbe-systemd-resolved.service-kK2cQi
+drwx------ 3 root   root   4096 Mar 26 10:06 systemd-private-694f49e53f22468f859be0691d9cdfbe-systemd-timesyncd.service-sFW1Kh
+drwx------ 3 root   root   4096 Mar 26 10:06 systemd-private-694f49e53f22468f859be0691d9cdfbe-upower.service-c0Jayu
+drwx------ 2 dbda   dbda   4096 Mar 26 14:42 tracker-extract-3-files.1000
+drwx------ 2 gdm    gdm    4096 Mar 26 10:06 tracker-extract-3-files.128
+$ cd IACSD
+$ ls
+$ touch project-1 project-2 project-3 project-4
+$ ls
+project-1  project-2  project-3  project-4
+$ ls -l
+total 0
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-1
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-2
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-3
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-4
+$
+
+12.
+
+12.1.
+
+dbda@dbda-VirtualBox:~/DBDA$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,dbda
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:dbda
+floppy:x:25:
+tape:x:26:
+sudo:x:27:dbda
+audio:x:29:pulse
+dip:x:30:dbda
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:telnetd
+video:x:44:
+sasl:x:45:
+plugdev:x:46:dbda
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+crontab:x:104:
+messagebus:x:105:
+systemd-timesync:x:106:
+input:x:107:
+sgx:x:108:
+kvm:x:109:
+render:x:110:
+syslog:x:111:
+tss:x:112:
+bluetooth:x:113:
+ssl-cert:x:114:
+uuidd:x:115:
+systemd-oom:x:116:
+tcpdump:x:117:
+_ssh:x:118:
+avahi-autoipd:x:119:
+netdev:x:120:
+avahi:x:121:
+lpadmin:x:122:dbda
+rtkit:x:123:
+whoopsie:x:124:
+sssd:x:125:
+fwupd-refresh:x:126:
+nm-openvpn:x:127:
+scanner:x:128:saned
+saned:x:129:
+colord:x:130:
+geoclue:x:131:
+pulse:x:132:
+pulse-access:x:133:
+gdm:x:134:
+lxd:x:135:dbda
+dbda:x:1000:CDAC,bob
+sambashare:x:136:dbda
+CDAC:x:1021:CDAC,IACSD,SUNBEAM,ACTSPUNE,KCDAC,JCDAC,TCDAC
+telnetd:x:137:
+plocate:x:138:
+tom:x:1008:
+bob:x:1009:
+sam:x:1010:
+prince:x:1011:
+dac:x:1022:tom
+ditiss:x:1023:sam
+dbda@dbda-VirtualBox:~/DBDA$ sudo usermod -a -G sudo prince
+dbda@dbda-VirtualBox:~/DBDA$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,dbda
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:dbda
+floppy:x:25:
+tape:x:26:
+sudo:x:27:dbda,prince
+audio:x:29:pulse
+dip:x:30:dbda
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:telnetd
+video:x:44:
+sasl:x:45:
+plugdev:x:46:dbda
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+crontab:x:104:
+messagebus:x:105:
+systemd-timesync:x:106:
+input:x:107:
+sgx:x:108:
+kvm:x:109:
+render:x:110:
+syslog:x:111:
+tss:x:112:
+bluetooth:x:113:
+ssl-cert:x:114:
+uuidd:x:115:
+systemd-oom:x:116:
+tcpdump:x:117:
+_ssh:x:118:
+avahi-autoipd:x:119:
+netdev:x:120:
+avahi:x:121:
+lpadmin:x:122:dbda
+rtkit:x:123:
+whoopsie:x:124:
+sssd:x:125:
+fwupd-refresh:x:126:
+nm-openvpn:x:127:
+scanner:x:128:saned
+saned:x:129:
+colord:x:130:
+geoclue:x:131:
+pulse:x:132:
+pulse-access:x:133:
+gdm:x:134:
+lxd:x:135:dbda
+dbda:x:1000:CDAC,bob
+sambashare:x:136:dbda
+CDAC:x:1021:CDAC,IACSD,SUNBEAM,ACTSPUNE,KCDAC,JCDAC,TCDAC
+telnetd:x:137:
+plocate:x:138:
+tom:x:1008:
+bob:x:1009:
+sam:x:1010:
+prince:x:1011:
+dac:x:1022:tom
+ditiss:x:1023:sam
+dbda@dbda-VirtualBox:~/DBDA$ su prince
+Password: 
+$ whoami
+prince
+$ pwd
+/home/dbda/DBDA
+$ cd /tmp/IACSD
+$ ls -l
+total 0
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-1
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-2
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-3
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-4
+$ sudo chown tom project-1
+[sudo] password for prince: 
+$ ls -l
+total 0
+-rw-rw-r-- 1 tom    prince 0 Mar 26 15:21 project-1
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-2
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-3
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-4
+$ ls -l
+total 0
+-rw-rw-r-- 1 tom    prince 0 Mar 26 15:21 project-1
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-2
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-3
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-4
+
+
+12.2.
+
+$ sudo chown dac project-2
+$ ls -l
+total 0
+-rw-rw-r-- 1 tom    prince 0 Mar 26 15:21 project-1
+-rw-rw-r-- 1 dac    prince 0 Mar 26 15:21 project-2
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-3
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-4
+
+12.3.
+
+$ cat project-3
+$ echo "Hello" > project-3
+$ whoami
+prince
+$ cat project-3
+Hello
+$ su tom
+Password: 
+$ pwd
+/tmp/IACSD
+$ ls -l
+total 4
+-rw-rw-r-- 1 tom    prince 0 Mar 26 15:21 project-1
+-rw-rw-r-- 1 dac    prince 0 Mar 26 15:21 project-2
+-rw-rw-r-- 1 prince prince 6 Mar 26 15:41 project-3
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-4
+$ whoami
+tom
+$ cat project-3
+Hello
+$ exit
+$ sudo chmod 660 project-3
+$ ls -l
+total 4
+-rw-rw-r-- 1 tom    prince 0 Mar 26 15:21 project-1
+-rw-rw-r-- 1 dac    prince 0 Mar 26 15:21 project-2
+-rw-rw---- 1 prince prince 6 Mar 26 15:41 project-3
+-rw-rw-r-- 1 prince prince 0 Mar 26 15:21 project-4
+$ su tom
+Password: 
+$ whoami
+tom
+$exit
+
+12.4.
+
+$ whoami
+prince
+$ cat project-4
+$ echo "Hello" > project-4
+$ cat project-4
+Hello
+$ sudo chgrp dbda project-4
+$ ls -l
+total 4
+-rw-rw-r-- 1 tom    prince 0 Mar 26 15:21 project-1
+-rw-rw-r-- 1 dac    prince 0 Mar 26 15:21 project-2
+-rw-rw---- 1 prince prince 6 Mar 26 15:41 project-3
+-rw-rw-r-- 1 prince dbda   6 Mar 26 15:45 project-4
+$ su bob
+Password: 
+$ ls -l
+total 4
+-rw-rw-r-- 1 tom    prince 0 Mar 26 15:21 project-1
+-rw-rw-r-- 1 dac    prince 0 Mar 26 15:21 project-2
+-rw-rw---- 1 prince prince 6 Mar 26 15:41 project-3
+-rw-rw-r-- 1 prince dbda   6 Mar 26 15:45 project-4
+$ cat project-4
+Hello
+$ chmod 774 project-4
+$ ls -l
+total 8
+-rw-rw-r-- 1 tom    prince 0 Mar 26 15:21 project-1
+-rw-rw-r-- 1 dac    prince 0 Mar 26 15:21 project-2
+-rw-rw---- 1 prince prince 6 Mar 26 15:41 project-3
+-rwxrwxr-- 1 prince dbda   6 Mar 26 15:45 project-4
+$ exit
+$ exit
+dbda@dbda-VirtualBox:/tmp/IACSD$ 
